@@ -1,0 +1,4 @@
+*.py[co]
+
+src/*.cpp
+src/*.py
