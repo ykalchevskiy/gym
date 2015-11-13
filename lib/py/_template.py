@@ -14,6 +14,10 @@ def bye(message=None):
     sys.exit()
 
 
+def repeat(n):
+    return itertools.repeat(None, n)
+
+
 def read(func=None):
     a = sys.stdin.readline().rstrip('\n')
     return a if func is None else func(a)
@@ -25,7 +29,7 @@ def read_array(func=None, sep=None, max_split=-1):
 
 
 def read_2d_array(n, func=None, sep=None, max_split=-1):
-    return [read_array(func, sep, max_split) for _ in itertools.repeat(None, n)]
+    return [read_array(func, sep, max_split) for _ in repeat(n)]
 
 
 def read_int():
