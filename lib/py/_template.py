@@ -14,7 +14,7 @@ def bye(message=None):
     sys.exit()
 
 
-def repeat(n):
+def times(n):
     return itertools.repeat(None, n)
 
 
@@ -29,7 +29,7 @@ def read_array(func=None, sep=None, max_split=-1):
 
 
 def read_2d_array(n, func=None, sep=None, max_split=-1):
-    return [read_array(func, sep, max_split) for _ in repeat(n)]
+    return [read_array(func, sep, max_split) for _ in times(n)]
 
 
 def read_int():
