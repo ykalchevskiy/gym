@@ -33,14 +33,17 @@ def read_2d_array(n, func=None, sep=None, max_split=-1):
 
 
 def read_int():
+    """:rtype: int"""
     return read(int)
 
 
 def read_int_array(sep=None, max_split=-1):
+    """:rtype: list[int]"""
     return read_array(int, sep, max_split)
 
 
 def read_int_2d_array(n, sep=None, max_split=-1):
+    """:rtype: list[list[int]]"""
     return read_2d_array(n, int, sep, max_split)
 
 
