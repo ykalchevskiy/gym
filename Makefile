@@ -33,7 +33,7 @@ prepare_cs:
 .PHONY : prepare_cs
 
 parse:
-	@(cd bin/ && java -jar Hightail-v0.9.4.jar)&
+	@(cd bin/hightail/ && java -jar Hightail-v0.9.4.jar)&
 
 .PHONY : parse
 
