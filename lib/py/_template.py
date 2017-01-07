@@ -62,20 +62,22 @@ def write_2d_array(array, **kwargs):
 
 
 def _main_():
-    name = ''
-    names = ''
+    name = ''  # fill with a name of a problem
+    names = False  # fill with True
     if name or names:
-        in_name = name + '.in' if name else 'input.txt'
-        out_name = name + '.out' if name else 'output.txt'
+        in_name = (name + '.in') if name else 'input.txt'
+        out_name = (name + '.out') if name else 'output.txt'
         stdin = sys.stdin
         stdout = sys.stdout
         sys.stdin = open(in_name)
         sys.stdout = open(out_name, 'w')
-        main()
-        sys.stdin.close()
-        sys.stdout.close()
-        sys.stdin = stdin
-        sys.stdout = stdout
+        try:
+            main()
+        finally:
+            sys.stdin.close()
+            sys.stdout.close()
+            sys.stdin = stdin
+            sys.stdout = stdout
     else:
         main()
 
