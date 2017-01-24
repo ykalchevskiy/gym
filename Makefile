@@ -1,4 +1,4 @@
-FILES = a b c d e
+FILES = a b c d e f
 
 
 help:
@@ -33,7 +33,7 @@ prepare_cs:
 .PHONY : prepare_cs
 
 parse:
-	@(cd bin/hightail/ && java -jar Hightail-v0.9.4.jar)&
+	@(cd bin/hightail/ && java -jar Hightail-v0.9.5++.jar)&
 
 .PHONY : parse
 
