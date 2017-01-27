@@ -5,10 +5,10 @@ help:
 	@echo "Usage: 'make <target>' where <target> is one of:"
 	@echo " help        print help"
 	@echo " clean       remove sources"
-	@echo " prepare_cf  create sources from templates for CodeForces"
+	@echo " prepare     create sources from templates"
 	@echo " prepare_cs  create sources from templates with cases"
 	@echo " parse       run Hightail parser in background"
-	@echo " compete_cf  'clean' && 'prepare_cf' && 'parse'"
+	@echo " compete     'clean' && 'prepare' && 'parse'"
 	@echo " compete_cs  'clean' && 'prepare_cs'"
 	@echo " train       create test sources"
 
@@ -20,11 +20,11 @@ clean:
 
 .PHONY : clean
 
-prepare_cf:
+prepare:
 	@for file in $(FILES); do cp lib/cpp/_template.cpp src/$$file.cpp; done
 	@for file in $(FILES); do cp lib/py/_template.py src/$$file.py; done
 
-.PHONY : prepare_cf
+.PHONY : prepare
 
 prepare_cs:
 	@for file in $(FILES); do cp lib/cpp/_template.cpp src/$$file.cpp; done
@@ -37,10 +37,10 @@ parse:
 
 .PHONY : parse
 
-compete_cf: clean prepare_cf parse
+compete: clean prepare parse
 	@echo Good luck!
 
-.PHONY : compete_cf
+.PHONY : compete
 
 compete_cs: clean prepare_cs
 	@echo Good luck!
