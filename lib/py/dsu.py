@@ -1,11 +1,11 @@
 class DSU(object):
     def __init__(self, n):
-        self._ids = range(n)
-        self._sizes = [1] * n
+        self.ids = range(n)
+        self.sizes = [1] * n
 
     def root(self, x):
-        while x != self._ids[x]:
-            x = self._ids[x]
+        while x != self.ids[x]:
+            x = self.ids[x]
         return x
 
     def is_connected(self, u, v):
@@ -14,9 +14,9 @@ class DSU(object):
     def connect(self, u, v):
         ru = self.root(u)
         rv = self.root(v)
-        if self._sizes[ru] < self._sizes[rv]:
-            self._ids[ru] = rv
-            self._sizes[rv] += self._sizes[ru]
+        if self.sizes[ru] < self.sizes[rv]:
+            self.ids[ru] = rv
+            self.sizes[rv] += self.sizes[ru]
         else:
-            self._ids[rv] = ru
-            self._sizes[ru] += self._sizes[rv]
+            self.ids[rv] = ru
+            self.sizes[ru] += self.sizes[rv]
