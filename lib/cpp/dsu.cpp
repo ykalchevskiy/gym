@@ -25,6 +25,9 @@ struct DSU {
     void connect(int u, int v) {
         int ru = root(u);
         int rv = root(v);
+        if (ru == rv) {
+            return;
+        }
         if (sizes[ru] < sizes[rv]) {
             ids[ru] = rv;
             sizes[rv] += sizes[ru];

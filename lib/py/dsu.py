@@ -14,6 +14,8 @@ class DSU(object):
     def connect(self, u, v):
         ru = self.root(u)
         rv = self.root(v)
+        if ru == rv:
+            return
         if self.sizes[ru] < self.sizes[rv]:
             self.ids[ru] = rv
             self.sizes[rv] += self.sizes[ru]
