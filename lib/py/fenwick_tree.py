@@ -1,5 +1,5 @@
 class FenwickTree(object):
-    def __init__(self, array, func=sum, preserve=False):
+    def __init__(self, array, func=lambda x, y: x + y, preserve=False):
         self._array = array
         self._tree = [0] * len(array)
         self._func = func
