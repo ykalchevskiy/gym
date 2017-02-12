@@ -1,4 +1,4 @@
-FILES = a b c d e f
+FILES = a b c d e f g
 
 
 help:
