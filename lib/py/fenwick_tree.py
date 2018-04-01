@@ -3,14 +3,13 @@ class FenwickTree(object):
         self._array = array
         self._tree = [0] * len(array)
         self._func = func
-        self._preserve = preserve
 
     def func(self, left, right):
         return self._count(right) - self._count(left - 1)
 
     def inc(self, index, count):
         while index < len(self._tree):
-            self._tree[index] += 1
+            self._tree[index] += count
 
     def _count(self, index):
         result = 0
